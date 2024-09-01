@@ -1,3 +1,7 @@
+uuu_1.5.182 / 2024-09-01
+========================
+
+ * Too many changes to list due to lack of maintenance
 
 uuu_1.5.21 / 2023-02-01
 =======================

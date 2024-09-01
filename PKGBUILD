@@ -1,28 +1,29 @@
-# Maintainer: Theowhy <aur.theowhy@shizoku.fr>
+# Maintainer: SpieringsAE <maud_spierings@hotmail.com>
+# Contributor: Theowhy <aur.theowhy@shizoku.fr>
 # Contributor: jpkotta
 # Contributor: jona
 # Contributor: arti
 pkgname=mfgtools
-pkgver=1.5.21
-pkgrel=2
+pkgver=1.5.182
+pkgrel=1
 pkgdesc="Freescale/NXP I.MX Chip image deploy tools"
-arch=(x86_64)
+arch=('x86_64' 'aarch64')
 url="https://github.com/NXPmicro/mfgtools"
 license=('BSD')
-depends=('bzip2' 'zlib' 'libusb' 'libzip' 'openssl')
+depends=('bzip2' 'zlib' 'libusb' 'libzip' 'openssl' 'tinyxml2')
 makedepends=('cmake')
 changelog=History.md
-source=(https://github.com/NXPmicro/mfgtools/releases/download/uuu_$pkgver/uuu_source-$pkgver.tar.gz uuu-complete.bash uuu-cstdint.patch)
-sha256sums=('600be50827b52df4dddf0c7d07da27b103a4576eb445890905c61780e3c36871'
+source=(https://github.com/NXPmicro/mfgtools/releases/download/uuu_$pkgver/uuu_source-uuu_$pkgver.tar.gz uuu-complete.bash uuu-cstdint.patch)
+sha256sums=('723d3da358e6af974a056e3adbcb105fac9dad4b87544de0d22b8c974a8037aa'
             'ffc8e32655ce574a4719c85c5c9a3530a5ec619e933fc801a291df8ec506a442'
             '8fda770717ca00034e7685077509d766ab854fb6b750a937b6d5efd3998d9c65')
-
 prepare() {
-  patch --directory="uuu-$pkgver" --forward --strip=1 --input="${srcdir}/uuu-cstdint.patch"
+  patch --directory="uuu-uuu_$pkgver" --forward --strip=1 --input="${srcdir}/uuu-cstdint.patch"
 }
 
 build() {
-  cd "uuu-$pkgver"
+  ls
+  cd "uuu-uuu_$pkgver"
   # Remove useless folders to make
   rm -Rf -- bzip2 libusb msvc zlib
   mkdir -p build
@@ -33,7 +34,7 @@ build() {
 }
 
 package() {
-  cd "uuu-$pkgver/build"
+  cd "uuu-uuu_$pkgver/build"
 
   make DESTDIR="$pkgdir/" install
 
