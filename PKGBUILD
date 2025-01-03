@@ -5,9 +5,9 @@
 # Contributor: arti
 pkgname=mfgtools
 pkgver=1.5.191
-pkgrel=1
+pkgrel=2
 pkgdesc="Freescale/NXP I.MX Chip image deploy tools"
-arch=('x86_64' 'aarch64')
+arch=('x86_64' 'aarch64' 'riscv64')
 url="https://github.com/NXPmicro/mfgtools"
 license=('BSD')
 depends=('bzip2' 'zlib' 'libusb' 'libzip' 'openssl' 'tinyxml2')
