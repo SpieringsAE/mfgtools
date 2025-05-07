@@ -5,7 +5,7 @@
 # Contributor: arti
 pkgname=mfgtools
 pkgver=1.5.201
-pkgrel=2
+pkgrel=3
 pkgdesc="Freescale/NXP I.MX Chip image deploy tools"
 arch=('x86_64' 'aarch64' 'riscv64')
 url="https://github.com/NXPmicro/mfgtools"
@@ -31,7 +31,7 @@ build() {
   mkdir -p build
   cd build
 
-  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release ..
+  cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release ..
   make
 }
 
