@@ -1,22 +1,37 @@
-diff '--color=auto' --unified --recursive --text --color uuu.orig/libuuu/libcomm.h uuu.new/libuuu/libcomm.h
---- uuu.orig/libuuu/libcomm.h    2022-11-01 20:42:46.000000000 +0100
-+++ uuu.new/libuuu/libcomm.h 2023-07-09 13:31:24.344615430 +0200
-@@ -29,6 +29,7 @@
- *
+diff --git a/libuuu/libcomm.h b/libuuu/libcomm.h
+index 5e5dacd..e45093c 100644
+--- a/libuuu/libcomm.h
++++ b/libuuu/libcomm.h
+@@ -30,6 +30,7 @@
  */
+ #include <cstdint>
  #include <string>
 +#include <cstdint>
  #include <stdarg.h>
  #include <locale>
  #include <cctype>
-diff '--color=auto' --unified --recursive --text --color uuu.orig/uuu/buildincmd.h uuu.new/uuu/buildincmd.h
---- uuu.orig/uuu/buildincmd.h    2022-11-01 20:42:46.000000000 +0100
-+++ uuu.new/uuu/buildincmd.h 2023-07-09 13:31:55.148653209 +0200
-@@ -33,6 +33,7 @@
-
+diff --git a/libuuu/sdps.h b/libuuu/sdps.h
+index b82f9d7..517cc12 100644
+--- a/libuuu/sdps.h
++++ b/libuuu/sdps.h
+@@ -29,6 +29,8 @@
+ *
+ */
+ 
++#include <cstdint>
++
+ #include "cmd.h"
+ 
+ class SDPSCmd : public CmdBase
+diff --git a/uuu/buildincmd.h b/uuu/buildincmd.h
+index 3a94679..8e972d7 100644
+--- a/uuu/buildincmd.h
++++ b/uuu/buildincmd.h
+@@ -34,6 +34,7 @@
+ #include <cstdint>
  #include <map>
  #include <string>
 +#include <cstdint>
  #include <vector>
-
+ 
  extern const char * g_vt_boldwhite;
